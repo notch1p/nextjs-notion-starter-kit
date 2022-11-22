@@ -9,7 +9,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'Next.js Notion Starter Kit',
-  domain: 'nextjs-notion-starter-kit.notch1p',
+  domain: 'www.notch1p.xyz',
   author: 'Evan Gao',
 
   // open graph metadata (optional)
