@@ -13,7 +13,7 @@ export default siteConfig({
   author: 'Evan Gao',
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description: 'A Collection of my thoughts on things presented poorly',
 
   // social usernames (optional)
   twitter: 'notch1p',
