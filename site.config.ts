@@ -8,12 +8,12 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Next.js Notion Starter Kit',
+  name: 'Evan Gao | Thoughts and Technology',
   domain: 'www.notch1p.xyz',
   author: 'Evan Gao',
 
   // open graph metadata (optional)
-  description: 'A Collection of my thoughts on things presented poorly',
+  description: 'A Collection of my thoughts on things presented poorly.',
 
   // social usernames (optional)
   twitter: 'notch1p',
