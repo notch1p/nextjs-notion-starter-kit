@@ -5,7 +5,7 @@ export default siteConfig({
   rootNotionPageId: '136ad01183e24e67b8132aca9616407b',
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
-  rootNotionSpaceId: null,
+  rootNotionSpaceId: 'f0ba410d-ea5c-41c6-a36f-9d60dfb5a0b4',
 
   // basic site info (required)
   name: 'Evan Gao | Thoughts and Technology',
@@ -49,16 +49,16 @@ export default siteConfig({
 
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
-  navigationStyle: 'default'
+  // navigationStyle: 'default'
   // navigationStyle: 'custom',
-  // navigationLinks: [
-  //   {
-  //     title: 'About',
-  //     pageId: 'f1199d37579b41cbabfc0b5174f4256a'
-  //   },
-  //   {
-  //     title: 'Contact',
-  //     pageId: '6a29ebcb935a4f0689fe661ab5f3b8d1'
-  //   }
-  // ]
+  navigationLinks: [
+    {
+      title: 'About',
+      pageId: 'c3a8cd8d5bdf4d92ac6a75be286ad784'
+    },
+    // {
+    //   title: 'Contact',
+    //   pageId: '6a29ebcb935a4f0689fe661ab5f3b8d1'
+    // }
+  ]
 })
