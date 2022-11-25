@@ -3,9 +3,9 @@
   "short_name": "Evan's Blog",
   "icons": [
     {
-      "src": "/32x32favicon.png",
+      "src": "/48x48favicon.png",
       "type": "image/png",
-      "sizes": "32x32"
+      "sizes": "48x48"
     },
     {
       "src": "/128x128-notch1p.png",
