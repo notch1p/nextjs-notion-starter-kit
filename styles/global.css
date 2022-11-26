@@ -17,7 +17,10 @@ body {
   --notion-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', 'Noto Sans', sans-serif;
-  font-family: var(--notion-font);
+  --notion-font-serif: 'Lyon-Text', Georgia, 'YuMincho', 'Yu Mincho',
+    'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Songti TC', 'Songti SC',
+    'SimSun', 'Nanum Myeongjo', 'NanumMyeongjo', 'Batang', serif;
+  font-family: var(--notion-font-serif);
   overflow-x: hidden;
 }
 

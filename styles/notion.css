@@ -17,6 +17,10 @@
   line-height: 1.65;
 }
 
+:root {
+  --bg-color: #f8f1e3;
+}
+
 .index-page,
 .tags-page {
   --notion-max-width: 900px;
