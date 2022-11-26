@@ -59,6 +59,7 @@
 .notion-header .notion-nav-header {
   max-width: 1100px;
   margin: 0 auto;
+  font-weight: bold;
 }
 
 .notion-nav-header-rhs {
@@ -382,8 +383,9 @@
 }
 
 .notion-header {
-  background: hsla(0, 0%, 100%, 0.8);
+  background: #f8f1e32e;
   backdrop-filter: saturate(180%) blur(16px);
+  font-weight: bold;
 }
 
 .dark-mode .notion-header {
