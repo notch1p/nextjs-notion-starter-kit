@@ -17,8 +17,21 @@
   line-height: 1.65;
 }
 
-.index-page {
+.index-page,
+.tags-page {
   --notion-max-width: 900px;
+}
+
+.tags-page .notion-collection-header {
+  display: none;
+}
+
+.tags-page .notion-gallery {
+  padding-top: 2em;
+}
+
+.tags-page .notion-gallery-grid {
+  padding-top: 4em;
 }
 
 .notion-text {
@@ -88,6 +101,14 @@
 .notion-collection-card-cover {
   border-radius: 16px;
   box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1);
+}
+
+.notion-page-cover-hero {
+  cursor: grab;
+}
+
+.notion-page-cover-hero:active {
+  cursor: grabbing;
 }
 
 .notion-collection-card-cover {
@@ -342,10 +363,14 @@
   background: none !important;
 }
 
+.notion-row {
+  overflow: unset;
+}
+
 /* if you don't want rounded page icon images, remove this */
 .notion-page-icon-hero.notion-page-icon-image {
   border-radius: 50%;
-  box-shadow: 0 8px 40px 0 rgb(0 0 0 / 21%);
+  box-shadow: 4px 4px 24px 0 rgb(0 0 0 / 21%);
 }
 .notion-page-icon-hero.notion-page-icon-image span,
 .notion-page-icon-hero.notion-page-icon-image img {
