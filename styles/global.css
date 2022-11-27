@@ -17,6 +17,9 @@ html {
 @font-face {
   font-family: 'I.Ming';
   src: url('fonts/IMing.woff2')format(woff2);
+  text-rendering: optimizeLegibility;
+  font-weight: normal;
+  font-style: normal;
 }
 body {
   /* --notion-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
