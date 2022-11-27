@@ -1,24 +1,27 @@
 @import url('https://fonts.loli.net/css2?family=IBM+Plex+Sans+Condensed:wght@600&family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+SC:wght@600&display=swap');
 @font-face {
   font-family: 'I.Ming';
-  src: url('fonts/IMing.woff2') format('woff2');
+  src: url('fonts/IMing.woff2')
+  /* format('woff2');
   text-rendering: optimizeLegibility;
   font-weight: normal;
-  font-style: normal;
+  font-style: normal; */
 }
 @font-face {
   font-family: 'Bermbob Sans';
-  src: url('fonts/bermbobsans.woff2') format('woff2');
+  src: url('fonts/bermbobsans.woff2')
+  /* format('woff2');
   text-rendering: optimizeLegibility;
   font-weight: normal;
-  font-style: normal;
+  font-style: normal; */
 }
 @font-face {
   font-family: 'Hannari';
-  src: url('fonts/Hannari.ttf') format('truetype');
+  src: url('fonts/Hannari.ttf')
+  /* format('truetype');
   text-rendering: optimizeLegibility;
   font-weight: normal;
-  font-size: normal;
+  font-size: normal; */
 }
 
 * {
