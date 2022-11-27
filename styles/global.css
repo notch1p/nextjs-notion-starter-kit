@@ -6,6 +6,14 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Bermbob Sans';
+  src: url('fonts/bermbobsans.woff2')format(woff2);
+  text-rendering: optimizeLegibility;
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
