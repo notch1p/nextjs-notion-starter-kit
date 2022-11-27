@@ -8,7 +8,7 @@ export default siteConfig({
   rootNotionSpaceId: 'f0ba410d-ea5c-41c6-a36f-9d60dfb5a0b4',
 
   // basic site info (required)
-  name: 'Evan Gao | Thoughts and Technology',
+  name: 'Atelier Evan',
   domain: 'www.notch1p.xyz',
   author: 'Evan Gao',
 
