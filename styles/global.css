@@ -12,14 +12,20 @@ html {
   padding: 0;
   margin: 0;
 }
-
+@import url('https://fonts.font.im/css?family=IBM+Plex+Serif:300,300i,400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+@import url('https://fonts.font.im/css?family=IBM+Plex+Sans+Condensed:500');
+@font-face {
+  font-family: 'I.Ming';
+  src: url('fonts/IMing.woff2')format(woff2);
+}
 body {
   /* --notion-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', 'Noto Sans', sans-serif; */
-  --notion-font: 'Lyon-Text', Georgia, 'YuMincho', 'Yu Mincho',
-    'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Songti TC', 'Songti SC',
-    'SimSun', 'Nanum Myeongjo', 'NanumMyeongjo', 'Batang', serif;
+  --notion-font: 'IBM Plex Serif', 'Georgia Pro', 'Georgia', 'I.Ming', serif;
+  /* 'YuMincho',
+    'Yu Mincho', 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Songti TC',
+    'Songti SC', 'SimSun', 'Nanum Myeongjo', 'NanumMyeongjo', 'Batang'; */
   font-family: var(--notion-font);
   overflow-x: hidden;
 }
