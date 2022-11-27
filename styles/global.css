@@ -1,3 +1,12 @@
+@import url('https://fonts.font.im/css?family=IBM+Plex+Serif:300,300i,400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+@import url('https://fonts.font.im/css?family=IBM+Plex+Sans+Condensed:500');
+@font-face {
+  font-family: 'I.Ming';
+  src: url('fonts/IMing.woff2')format(woff2);
+  text-rendering: optimizeLegibility;
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
 }
@@ -11,15 +20,6 @@ body,
 html {
   padding: 0;
   margin: 0;
-}
-@import url('https://fonts.font.im/css?family=IBM+Plex+Serif:300,300i,400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
-@import url('https://fonts.font.im/css?family=IBM+Plex+Sans+Condensed:500');
-@font-face {
-  font-family: 'I.Ming';
-  src: url('fonts/IMing.woff2')format(woff2);
-  text-rendering: optimizeLegibility;
-  font-weight: normal;
-  font-style: normal;
 }
 body {
   /* --notion-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
