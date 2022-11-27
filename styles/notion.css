@@ -7,6 +7,9 @@
  * places to add some flare.
  */
 
+ @import url('https://fonts.font.im/css?family=IBM+Plex+Serif:300,300i,400,400i,700,700i&subset=cyrillic,cyrillic-ext,latin-ext');
+ @import url('https://fonts.font.im/css?family=IBM+Plex+Sans+Condensed:500');
+
 .notion {
   --notion-max-width: 720px;
   --notion-header-height: 54px;
