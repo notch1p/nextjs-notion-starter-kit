@@ -2,17 +2,24 @@
 @import url(https://fonts.ews1.com/css2?family=Noto+Serif+SC:wght@600&display=swap);
 @font-face {
   font-family: 'I.Ming';
-  src: url('fonts/IMing.woff2')format(woff2);
+  src: url('fonts/IMing.woff2') format(woff2);
   text-rendering: optimizeLegibility;
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Bermbob Sans';
-  src: url('fonts/bermbobsans.woff2')format(woff2);
+  src: url('fonts/bermbobsans.woff2') format(woff2);
   text-rendering: optimizeLegibility;
   font-weight: normal;
   font-style: normal;
+}
+@font-face {
+  font-family: 'Hannari';
+  src: url('fonts/Hannari-Regular.ttf') format(ttf);
+  text-rendering: optimizeLegibility;
+  font-weight: normal;
+  font-size: normal;
 }
 
 * {
@@ -33,7 +40,8 @@ body {
   /* --notion-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', 'Noto Sans', sans-serif; */
-  --notion-font: 'IBM Plex Serif', 'Georgia Pro', 'Georgia', 'I.Ming', serif;
+  --notion-font: 'IBM Plex Serif', 'Georgia Pro', 'Georgia', 'Hannari', 'I.Ming',
+    serif;
   /* 'YuMincho',
     'Yu Mincho', 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'Songti TC',
     'Songti SC', 'SimSun', 'Nanum Myeongjo', 'NanumMyeongjo', 'Batang'; */
