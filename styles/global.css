@@ -16,7 +16,7 @@
 }
 @font-face {
   font-family: 'Hannari';
-  src: url('fonts/Hannari.ttf') format(ttf);
+  src: url('fonts/Hannari.ttf') format(truetype);
   text-rendering: optimizeLegibility;
   font-weight: normal;
   font-size: normal;
