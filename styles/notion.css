@@ -23,6 +23,10 @@
   --select-color-0: #ff5fa2;
 }
 
+.notion-table-of-contents-active-item {
+  font-family: 'IBM Plex Serif', 'Georgia Pro', 'Georgia', 'Noto Serif SC';
+}
+
 .index-page,
 .tags-page {
   --notion-max-width: 900px;
