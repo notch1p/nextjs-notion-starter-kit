@@ -5,7 +5,7 @@ export default siteConfig({
   rootNotionPageId: '136ad01183e24e67b8132aca9616407b',
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
-  rootNotionSpaceId: 'f0ba410d-ea5c-41c6-a36f-9d60dfb5a0b4',
+  rootNotionSpaceId: null,
 
   // basic site info (required)
   name: 'Atelier Evan',
