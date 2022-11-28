@@ -19,6 +19,8 @@
 
 :root {
   --bg-color: #f8f1e3;
+  --select-color-1: #ffa9be;
+  --select-color-0: #ff5fa2;
 }
 
 .index-page,
@@ -78,7 +80,8 @@
 
 .notion-gallery-grid .notion-page-title-text {
   font-size: 2em;
-  font-family: 'IBM Plex Serif', 'Georgia Pro', 'Georgia', 'Noto Serif SC', serif;
+  font-family: 'IBM Plex Serif', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
+    serif;
   white-space: unset;
 }
 
@@ -153,7 +156,8 @@
 .notion-h2,
 .notion-h3 {
   margin-bottom: 0.25em;
-  font-family: 'IBM Plex Serif', 'Georgia Pro', 'Georgia', 'Noto Serif SC', serif;
+  font-family: 'IBM Plex Serif', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
+    serif;
 }
 
 .notion-callout {
@@ -410,7 +414,8 @@
 
 .notion b,
 .notion-title {
-  font-family: 'IBM Plex Serif', 'Georgia Pro', 'Georgia', 'Noto Serif SC', serif;
+  font-family: 'IBM Plex Serif', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
+    serif;
 }
 
 .notion-block-ab9a258d6cf444f3bb40dc2600feae91 .notion-column {
