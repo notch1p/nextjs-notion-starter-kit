@@ -87,6 +87,7 @@
   font-family: 'IBM Plex Serif', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
     serif;
   white-space: unset;
+  font-weight: 700;
 }
 
 .notion-gallery-grid .notion-collection-card-property {
