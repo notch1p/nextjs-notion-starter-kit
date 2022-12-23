@@ -2,7 +2,7 @@
 @font-face {
   font-family: 'I.Ming';
   src:
-  local(I\.Ming),
+  local("I.Ming"),
   url("/fonts/IMing.woff2")format('woff2');
 
   text-rendering: optimizeLegibility;
