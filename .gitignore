@@ -42,3 +42,5 @@ yarn-error.log*
 node_modules.nosync
 
 .next.nosync
+
+node_modules.nosync
