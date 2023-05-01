@@ -29,6 +29,7 @@
 
 .notion-table-of-contents-active-item {
   font-family: 'IBM Plex Serif', 'Georgia Pro', 'Georgia', 'Noto Serif SC';
+  font-weight: bold;
 }
 
 .index-page,
