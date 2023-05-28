@@ -12,6 +12,11 @@
   --notion-header-height: 48px;
 }
 
+.notion code {
+  font-family: 'Victor Mono', SFMono, Consolas, Liberation Mono, Menlo, Courier,
+    monospace;
+}
+
 .notion-frame {
   padding: 0;
 }
