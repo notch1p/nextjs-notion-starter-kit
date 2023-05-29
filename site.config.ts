@@ -9,7 +9,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'Atelier Evan',
-  domain: 'www.notch1p.xyz',
+  domain: 'notch1p.xyz',
   author: 'Evan Gao',
 
   // open graph metadata (optional)
