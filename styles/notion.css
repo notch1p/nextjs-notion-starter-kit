@@ -19,6 +19,7 @@
 .notion code {
   font-family: 'Victor Mono', SFMono, Consolas, Liberation Mono, Menlo, Courier,
     monospace;
+  font-variant-caps: normal;
 }
 
 .notion-frame {
@@ -179,6 +180,7 @@
   font-family: 'Playfair Display', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
     serif;
   font-variant: small-caps;
+  font-weight: 900;
 }
 
 .notion-callout {
@@ -437,7 +439,7 @@
 .notion-title {
   font-family: 'Playfair Display', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
     serif;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .notion-block-ab9a258d6cf444f3bb40dc2600feae91 .notion-column {
