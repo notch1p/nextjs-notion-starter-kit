@@ -38,7 +38,8 @@
 }
 
 .notion-table-of-contents-active-item {
-  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia', 'Noto Serif SC';
+  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia',
+    'Source Han Serif VF', 'Source Han Serif', 'Noto Serif SC';
   font-weight: 600;
 }
 
@@ -99,8 +100,8 @@
 
 .notion-gallery-grid .notion-page-title-text {
   font-size: 2em;
-  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
-    serif;
+  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia',
+    'Source Han Serif VF', 'Source Han Serif', 'Noto Serif SC', serif;
 
   white-space: unset;
   font-weight: 700;
@@ -177,8 +178,8 @@
 .notion-h2,
 .notion-h3 {
   margin-bottom: 0.25em;
-  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
-    serif;
+  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia',
+    'Source Han Serif VF', 'Source Han Serif', 'Noto Serif SC', serif;
   font-variant: small-caps;
   font-weight: 900;
 }
@@ -437,8 +438,8 @@
 
 .notion b,
 .notion-title {
-  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
-    serif;
+  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia',
+    'Source Han Serif VF', 'Source Han Serif', 'Noto Serif SC', serif;
   font-weight: 700;
 }
 
