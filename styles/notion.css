@@ -38,7 +38,7 @@
 
 .notion-table-of-contents-active-item {
   font-family: 'Playfair Display', 'Georgia Pro', 'Georgia', 'Noto Serif SC';
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .index-page,
@@ -437,6 +437,7 @@
 .notion-title {
   font-family: 'Playfair Display', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
     serif;
+  font-weight: 900;
 }
 
 .notion-block-ab9a258d6cf444f3bb40dc2600feae91 .notion-column {
