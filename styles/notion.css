@@ -7,6 +7,10 @@
  * whereas our goal with this site is to adjust Notion's styling in a few key
  * places to add some flare.
  */
+
+* {
+  font-variant-numeric: lining-nums;
+}
 .notion {
   --notion-max-width: 720px;
   --notion-header-height: 48px;
@@ -33,9 +37,8 @@
 }
 
 .notion-table-of-contents-active-item {
-  font-family: 'EB Garamond', 'Georgia Pro', 'Georgia', 'Noto Serif SC';
+  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia', 'Noto Serif SC';
   font-weight: bold;
-  font-variant-ligatures: discretionary-ligatures;
 }
 
 .index-page,
@@ -95,8 +98,9 @@
 
 .notion-gallery-grid .notion-page-title-text {
   font-size: 2em;
-  font-family: 'EB Garamond', 'Georgia Pro', 'Georgia', 'Noto Serif SC', serif;
-  font-variant-ligatures: discretionary-ligatures;
+  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
+    serif;
+
   white-space: unset;
   font-weight: 700;
 }
@@ -172,9 +176,9 @@
 .notion-h2,
 .notion-h3 {
   margin-bottom: 0.25em;
-  font-family: 'EB Garamond', 'Georgia Pro', 'Georgia', 'Noto Serif SC', serif;
+  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
+    serif;
   font-variant: small-caps;
-  font-variant-ligatures: discretionary-ligatures;
 }
 
 .notion-callout {
@@ -431,8 +435,8 @@
 
 .notion b,
 .notion-title {
-  font-family: 'EB Garamond', 'Georgia Pro', 'Georgia', 'Noto Serif SC', serif;
-  font-variant-ligatures: discretionary-ligatures;
+  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia', 'Noto Serif SC',
+    serif;
 }
 
 .notion-block-ab9a258d6cf444f3bb40dc2600feae91 .notion-column {
