@@ -60,31 +60,3 @@
   font-weight: 600;
   font-style: italic;
 }
-/* @font-face {
-	font-family: 'Playfair Display';
-	src: local('Playfair Display') url('/fonts/playfair.ttf') format('truetype');
-	text-rendering: optimizeLegibility;
-	font-display: swap;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Playfair Display';
-	src: local('Playfair Display') url('/fonts/playfair-i.ttf') format('truetype');
-	text-rendering: optimizeLegibility;
-	font-display: swap;
-	font-style: italic;
-} */
-/* @font-face {
-	font-family: 'Bermbob Sans';
-	src: url('/fonts/BermbobSans-Regular.woff2') format('woff2');
-	text-rendering: optimizeLegibility;
-	font-weight: normal;
-	font-style: normal;
-} */
-/* @font-face {
-	font-family: 'Hannari';
-	src: url('/public/fonts/Hannari.ttf')format('truetype');
-	text-rendering: optimizeLegibility;
-	font-weight: normal;
-	font-size: normal;
-} */

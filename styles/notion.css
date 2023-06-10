@@ -1,5 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@600&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap'); */
-/**
+/*
  * This file contains site-specifc style overrides for Notion elements from
  * react-notion-x.
  *
@@ -7,7 +6,7 @@
  * whereas our goal with this site is to adjust Notion's styling in a few key
  * places to add some flare.
  */
-
+@import url('./vars.css');
 * {
   font-variant-numeric: lining-nums;
 }
@@ -17,8 +16,11 @@
 }
 
 .notion code {
-  font-family: 'Victor Mono', SFMono, Consolas, Liberation Mono, Menlo, Courier,
-    monospace;
+  font-family: var(--notion-code-font);
+  font-variant-caps: normal;
+}
+.notion-inline-code b {
+  font-family: var(--notion-code-font) !important;
   font-variant-caps: normal;
 }
 
@@ -109,10 +111,7 @@
 
 .notion-gallery-grid .notion-page-title-text {
   font-size: 2em;
-  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia',
-    'Source Han Serif SC VF', 'Source Han Serif SC', 'Noto Serif SC',
-    'Noto Serif HK', serif;
-
+  font-family: var(--notion-stress-font);
   white-space: unset;
   font-weight: 700;
 }
@@ -188,9 +187,7 @@
 .notion-h2,
 .notion-h3 {
   margin-bottom: 0.25em;
-  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia',
-    'Source Han Serif SC VF', 'Source Han Serif SC', 'Noto Serif SC',
-    'Noto Serif HK', serif;
+  font-family: var(--notion-stress-font);
   font-variant: small-caps;
   font-weight: 900;
 }
@@ -449,9 +446,7 @@
 
 .notion b,
 .notion-title {
-  font-family: 'Playfair Display', 'Georgia Pro', 'Georgia',
-    'Source Han Serif SC VF', 'Source Han Serif SC', 'Noto Serif SC',
-    'Noto Serif HK', serif;
+  font-family: var(--notion-stress-font);
   font-weight: 700;
 }
 
