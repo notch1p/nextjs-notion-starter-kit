@@ -1,41 +1,4 @@
-@import url('https://fonts.sourcegcdn.com/css2?family=Noto+Serif+HK:wght@200..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@400..700&display=swap');
-@font-face {
-  font-family: 'I.Ming';
-  src: local('I.Ming'), url('/fonts/IMing.woff2') format('woff2');
-
-  text-rendering: optimizeLegibility;
-  font-weight: normal;
-  font-style: normal;
-}
-/* @font-face {
-  font-family: 'Playfair Display';
-  src: local('Playfair Display') url('/fonts/playfair.ttf') format('truetype');
-  text-rendering: optimizeLegibility;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Playfair Display';
-  src: local('Playfair Display') url('/fonts/playfair-i.ttf') format('truetype');
-  text-rendering: optimizeLegibility;
-  font-display: swap;
-  font-style: italic;
-} */
-/* @font-face {
-  font-family: 'Bermbob Sans';
-  src: url('/fonts/BermbobSans-Regular.woff2') format('woff2');
-  text-rendering: optimizeLegibility;
-  font-weight: normal;
-  font-style: normal;
-} */
-/* @font-face {
-  font-family: 'Hannari';
-  src: url('/public/fonts/Hannari.ttf')format('truetype');
-  text-rendering: optimizeLegibility;
-  font-weight: normal;
-  font-size: normal;
-} */
-
+@import url('./fonts.css');
 * {
   box-sizing: border-box;
   font-variant-numeric: lining-nums;
