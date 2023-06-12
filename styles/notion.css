@@ -25,8 +25,8 @@
 }
 .notion-property-multi_select-item {
   font-family: 'Oswald', sans-serif;
-  font-variant: small-caps;
   font-weight: 700;
+  text-transform: uppercase;
 }
 .notion-collection-row-property .notion-property {
   font-family: 'Oswald', sans-serif;
