@@ -2809,6 +2809,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"highlight-lisp@file:./external_pkg/highlight-lisp::locator=nextjs-notion-starter-kit%40workspace%3A.":
+  version: 0.1.6
+  resolution: "highlight-lisp@file:./external_pkg/highlight-lisp#./external_pkg/highlight-lisp::hash=8af158&locator=nextjs-notion-starter-kit%40workspace%3A."
+  checksum: 52f0a2c08f267fb1888da97401510eefb375a8b63cdd601f26252c7962a999342da345648020b162ac6cff3530975d9dda654484a2ba81329de24cce32e553da
+  languageName: node
+  linkType: hard
+
 "hosted-git-info@npm:^2.1.4":
   version: 2.8.9
   resolution: "hosted-git-info@npm:2.8.9"
@@ -3961,6 +3968,7 @@ __metadata:
     expiry-map: ^2.0.0
     fathom-client: ^3.4.1
     got: ^12.0.3
+    highlight-lisp: "file:./external_pkg/highlight-lisp"
     isomorphic-unfetch: ^3.1.0
     lodash.omit: ^4.5.0
     lqip-modern: ^1.2.0

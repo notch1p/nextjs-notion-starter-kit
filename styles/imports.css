@@ -1,7 +1,9 @@
 @import url('https://fonts.sourcegcdn.com/css2?family=Noto+Serif+HK:wght@200..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Dancing+Script:wght@400..700&display=swap');
 @font-face {
   font-family: 'I.Ming';
-  src: local('I.Ming'), url('/fonts/IMing.woff2') format('woff2');
+  src: local('I.Ming'),
+    url('https://flexio.blob.core.windows.net/fonts/IMing.woff2')
+      format('woff2');
   font-display: swap;
   text-rendering: optimizeLegibility;
   font-weight: normal;
@@ -10,7 +12,8 @@
 @font-face {
   font-family: 'Victor Mono';
   src: local('Victor Mono'),
-    url('/fonts/VictorMono-Regular.woff2') format('woff2');
+    url('https://flexio.blob.core.windows.net/fonts/VictorMono-Regular.woff2')
+      format('woff2');
   font-display: swap;
   text-rendering: optimizeLegibility;
   font-weight: normal;
@@ -19,7 +22,8 @@
 @font-face {
   font-family: 'Victor Mono';
   src: local('Victor Mono'),
-    url('/fonts/VictorMono-Italic.woff2') format('woff2');
+    url('https://flexio.blob.core.windows.net/fonts/VictorMono-Italic.woff2')
+      format('woff2');
   font-display: swap;
   text-rendering: optimizeLegibility;
   font-weight: normal;
@@ -27,7 +31,9 @@
 }
 @font-face {
   font-family: 'Victor Mono';
-  src: local('Victor Mono'), url('/fonts/VictorMono-Bold.woff2') format('woff2');
+  src: local('Victor Mono'),
+    url('https://flexio.blob.core.windows.net/fonts/VictorMono-Bold.woff2')
+      format('woff2');
   font-display: swap;
   text-rendering: optimizeLegibility;
   font-weight: 700;
@@ -36,7 +42,8 @@
 @font-face {
   font-family: 'Victor Mono';
   src: local('Victor Mono'),
-    url('/fonts/VictorMono-BoldItalic.woff2') format('woff2');
+    url('https://flexio.blob.core.windows.net/fonts/VictorMono-BoldItalic.woff2')
+      format('woff2');
   font-display: swap;
   text-rendering: optimizeLegibility;
   font-weight: 700;
@@ -45,7 +52,8 @@
 @font-face {
   font-family: 'Victor Mono';
   src: local('Victor Mono'),
-    url('/fonts/VictorMono-SemiBold.woff2') format('woff2');
+    url('https://flexio.blob.core.windows.net/fonts/VictorMono-SemiBold.woff2')
+      format('woff2');
   font-display: swap;
   text-rendering: optimizeLegibility;
   font-weight: 600;
@@ -54,7 +62,8 @@
 @font-face {
   font-family: 'Victor Mono';
   src: local('Victor Mono'),
-    url('/fonts/VictorMono-SemiBoldItalic.woff2') format('woff2');
+    url('https://flexio.blob.core.windows.net/fonts/VictorMono-SemiBoldItalic.woff2')
+      format('woff2');
   font-display: swap;
   text-rendering: optimizeLegibility;
   font-weight: 600;
