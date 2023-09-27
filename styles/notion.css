@@ -47,9 +47,8 @@
 }
 
 .notion-table-of-contents-active-item {
-  font-family: 'Literata', 'Georgia Pro', 'Georgia',
-    'Source Han Serif SC VF', 'Source Han Serif SC', 'Noto Serif SC',
-    'Noto Serif HK';
+  font-family: 'Literata', 'Georgia Pro', 'Georgia', 'Source Han Serif SC VF',
+    'Source Han Serif SC', 'Noto Serif SC', 'Noto Serif HK';
   font-weight: 600;
 }
 
@@ -463,4 +462,11 @@
 
 .notion-block-260baa77f1e1428b97fb14ac99c7c385 {
   display: none;
+}
+.notion-block-a386c5927a8d4400854b7c338ccae53b {
+  font-size: larger;
+}
+.notion-block-a386c5927a8d4400854b7c338ccae53b > * .katex-html {
+  display: flex;
+  justify-content: center;
 }
