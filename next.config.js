@@ -24,17 +24,17 @@ module.exports = {
   async headers() {
     return [
       {
-        source: "/fonts/*",
+        source: '/fonts/*',
         headers: [
           {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-    ];
-  },
-};
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable'
+          }
+        ]
+      }
+    ]
+  }
+}
 
 module.exports = withBundleAnalyzer({
   staticPageGenerationTimeout: 300,
@@ -48,10 +48,13 @@ module.exports = withBundleAnalyzer({
       's3.us-west-2.amazonaws.com',
       'transitivebullsh.it',
       'file.notion.so',
-      'notch1p.xyz'
+      'notch1p.xyz',
+      'flexio.blob.core.windows.net',
+      'r2.notch1p.xyz'
     ],
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    unoptimized: true
   }
 })
