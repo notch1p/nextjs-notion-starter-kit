@@ -52,9 +52,9 @@ module.exports = withBundleAnalyzer({
       'flexio.blob.core.windows.net',
       'r2.notch1p.xyz'
     ],
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/webp'], //do not use avif.
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    unoptimized: true
+    // unoptimized: true
   }
 })
