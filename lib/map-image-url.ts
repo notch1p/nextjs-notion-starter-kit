@@ -1,5 +1,4 @@
 import { Block } from 'notion-types'
-
 // import { defaultMapImageUrl } from 'react-notion-x'
 import { defaultPageCover, defaultPageIcon } from './config'
 
@@ -10,10 +9,7 @@ const defaultMapImageUrl = (url, block) => {
   if (url.startsWith('data:')) {
     return url
   }
-  if (url.startsWith('https://images.unsplash.com')) {
-    return url
-  }
-  if (url.startsWith('https://flexio.blob.core.windows.net') || url.startsWith('https://r2.notch1p.xyz')) return url
+  if (url.startsWith('https://flexio.blob.core.windows.net') || url.startsWith('https://r2.notch1p.xyz') || url.startsWith('https://images.unsplash.com')) return url
   try {
     const u = new URL(url)
     if (
