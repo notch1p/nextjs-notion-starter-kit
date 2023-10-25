@@ -50,7 +50,8 @@ module.exports = withBundleAnalyzer({
       'file.notion.so',
       'notch1p.xyz',
       'flexio.blob.core.windows.net',
-      'r2.notch1p.xyz'
+      'r2.notch1p.xyz',
+      'www.gravatar.com'
     ],
     formats: ['image/webp'], //do not use avif.
     dangerouslyAllowSVG: true,
