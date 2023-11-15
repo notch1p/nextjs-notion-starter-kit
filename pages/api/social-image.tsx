@@ -7,11 +7,11 @@ import { api, apiHost, rootNotionPageId } from '@/lib/config'
 import { NotionPageInfo } from '@/lib/types'
 
 const interRegularFontP = fetch(
-  new URL('../../public/fonts/InterDisplay-Medium.ttf', import.meta.url)
+  new URL('../../public/fonts/InterDisplay-Medium.woff2', import.meta.url)
 ).then((res) => res.arrayBuffer())
 
 const interBoldFontP = fetch(
-  new URL('../../public/fonts/InterDisplay-ExtraBold.ttf', import.meta.url)
+  new URL('../../public/fonts/InterDisplay-ExtraBold.woff2', import.meta.url)
 ).then((res) => res.arrayBuffer())
 
 export const config = {
