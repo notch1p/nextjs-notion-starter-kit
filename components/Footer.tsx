@@ -28,6 +28,7 @@ export const FooterImpl: React.FC = () => {
     },
     [toggleDarkMode]
   )
+  const currentYear = new Date().getFullYear()
 
   React.useEffect(() => {
     setHasMounted(true)
@@ -36,7 +37,7 @@ export const FooterImpl: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.copyright}>
-        Copyright {new Date().getFullYear()} <b>{config.author}</b>
+        Copyright {currentYear} {config.author}
       </div>
       <div className={styles.settings}>
         {hasMounted && (
