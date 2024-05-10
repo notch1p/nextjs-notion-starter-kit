@@ -1,4 +1,4 @@
-files="$(az storage blob list -c $1 --account-name $2 --query "[].{name:name}" --output tsv)"
+files="$(az storage blob list -c $1 --account-name $2 --query "[].{name:name}" --output tsv --prefix $3)"
 for f in $files
  do
    echo "==== Processing $f ===="

@@ -55,7 +55,7 @@ module.exports = withBundleAnalyzer({
     ],
     formats: ['image/webp'], //do not use avif.
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    unoptimized: true
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
+    // unoptimized: true
   }
 })
