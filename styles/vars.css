@@ -3,6 +3,6 @@
   --notion-stress-font: 'Literata', 'Georgia Pro', 'Georgia',
     'Source Han Serif SC VF', 'Source Han Serif SC', 'Noto Serif SC',
     'Noto Serif HK', serif;
-  --notion-code-font: 'Victor Mono', SFMono, Consolas, Liberation Mono, Menlo,
+  --notion-code-font: 'Victor Mono','Fira Math', SFMono, Consolas, Liberation Mono, Menlo,
     Courier, monospace;
 }
