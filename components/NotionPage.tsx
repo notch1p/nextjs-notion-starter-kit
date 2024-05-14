@@ -46,6 +46,8 @@ const Code = dynamic(() =>
       import('prismjs/components/prism-markup.js'),
       import('prismjs/components/prism-bash.js'),
       import('prismjs/components/prism-c.js'),
+      import('prismjs/components/prism-elixir.js'),
+      import('prismjs/components/prism-haskell.js'),
       import('prismjs/components/prism-cpp.js'),
       // import('prismjs/components/prism-csharp.js'),
       import('prismjs/components/prism-latex.js'),
@@ -68,7 +70,6 @@ const Code = dynamic(() =>
       // import('prismjs/components/prism-scss.js'),
       import('prismjs/components/prism-sql.js'),
       import('prismjs/components/prism-swift.js'),
-      import('prismjs/components/prism-wasm.js'),
       import('prismjs/components/prism-yaml.js')
     ])
     return m.Code

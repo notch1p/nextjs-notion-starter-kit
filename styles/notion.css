@@ -23,10 +23,6 @@
   font-family: var(--notion-code-font) !important;
   font-variant-caps: normal;
 }
-code.language-coq {
-  font-family: JuliaMono, SFMono, Consolas, Liberation Mono, Menlo, Courier,
-    monospace;
-}
 .notion-property-multi_select-item {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
