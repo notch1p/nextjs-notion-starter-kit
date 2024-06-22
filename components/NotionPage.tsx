@@ -110,9 +110,9 @@ const propertyLastEditedTimeValue = (
   defaultFn: () => React.ReactNode
 ) => {
   if (pageHeader && block?.last_edited_time) {
-    return `Last updated ${formatDate(block?.last_edited_time, {
-      month: 'long'
-    })}`
+    return <div><span style={{fontVariant: 'small-caps'}}>Revised</span><sup>{block?.version}</sup> {formatDate(block?.last_edited_time, {
+      month: 'short'
+    })}</div>
   }
 
   return defaultFn()
@@ -124,10 +124,9 @@ const propertyDateValue = (
 ) => {
   if (pageHeader && schema?.name?.toLowerCase() === 'published') {
     const publishDate = data?.[0]?.[1]?.[0]?.[1]?.start_date
-
     if (publishDate) {
       return `${formatDate(publishDate, {
-        month: 'long'
+        month: 'short'
       })}`
     }
   }
