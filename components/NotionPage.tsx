@@ -53,6 +53,7 @@ const Code = dynamic(() =>
       import('prismjs/components/prism-latex.js'),
       import('prismjs/components/prism-java.js'),
       import('prismjs/components/prism-coq.js'),
+      import('prismjs/components/prism-j.js'),
       import('prismjs/components/prism-js-templates.js'),
       // import('prismjs/components/prism-diff.js'),
       // import('prismjs/components/prism-git.js'),
@@ -294,6 +295,11 @@ export const NotionPage: React.FC<types.PageProps> = ({
           recordMap.block[key].value.properties.language[0][0] === 'F#'
         ) {
           recordMap.block[key].value.properties.language[0][0] = 'Fsharp'
+        }
+        else if (
+          recordMap.block[key].value.properties.language[0][0] === 'BNF'
+        ) {
+          recordMap.block[key].value.properties.language[0][0] = 'j'
         }
         console.log(recordMap.block[key].value)
       } catch (_) {
