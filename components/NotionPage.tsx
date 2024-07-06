@@ -61,6 +61,7 @@ const Code = dynamic(() =>
       // import('prismjs/components/prism-handlebars.js'),
       // import('prismjs/components/prism-less.js'),
       import('prismjs/components/prism-lisp.js'),
+      import('prismjs/components/prism-racket.js'),
       import('prismjs/components/prism-makefile.js'),
       import('prismjs/components/prism-markdown.js'),
       // import('prismjs/components/prism-objectivec.js'),
