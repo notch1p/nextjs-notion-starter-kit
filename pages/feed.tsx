@@ -1,6 +1,5 @@
 import type { GetServerSideProps } from 'next'
-
-import { ExtendedRecordMap } from 'notion-types'
+import { type ExtendedRecordMap } from 'notion-types'
 import {
   getBlockParentPage,
   getBlockTitle,
@@ -98,4 +97,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   return { props: {} }
 }
 
-export default () => null
+export default function noop() {
+  return null
+}

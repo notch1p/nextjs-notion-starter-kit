@@ -15,11 +15,17 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   }
 
   // cache for up to one day
-  res.setHeader('Cache-Control', 'max-age=0, s-maxage=86400, stale-while-revalidate=3600')
+  res.setHeader(
+    'Cache-Control',
+    'max-age=0, s-maxage=86400, stale-while-revalidate=3600'
+  )
   res.setHeader('Content-Type', 'text/plain')
 
   // only allow the site to be crawlable on the production deployment
-  if (process.env.VERCEL_ENV === 'production' || process.env.DEPLOY_ENV === 'production') {
+  if (
+    process.env.VERCEL_ENV === 'production' ||
+    process.env.DEPLOY_ENV === 'production'
+  ) {
     res.write(`User-agent: *
 Allow: /
 Disallow: /api/get-tweet-ast/*
@@ -42,4 +48,6 @@ Sitemap: ${host}/sitemap.xml
   }
 }
 
-export default () => null
+export default function noop() {
+  return null
+}

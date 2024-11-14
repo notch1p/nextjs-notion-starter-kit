@@ -1,42 +1,12 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
+import bundleAnalyzer from '@next/bundle-analyzer'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true'
 })
 
-// module.exports = {
-//   async headers() {
-//     return [
-//       {
-//         // matching all API routes
-//         source: "/pages/api/:path*",
-//         headers: [
-//           { key: "Access-Control-Allow-Credentials", value: "true" },
-//           { key: "Access-Control-Allow-Origin", value: "*" },
-//           { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
-//           { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
-//         ]
-//       }
-//     ]
-//   }
-// };
-
-module.exports = {
-  async headers() {
-    return [
-      {
-        source: '/fonts/*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable'
-          }
-        ]
-      }
-    ]
-  }
-}
-
-module.exports = withBundleAnalyzer({
+export default withBundleAnalyzer({
   staticPageGenerationTimeout: 300,
   images: {
     domains: [
@@ -57,5 +27,19 @@ module.exports = withBundleAnalyzer({
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
     // unoptimized: true
-  }
+  },
+  webpack: (config, _context) => {
+    // Workaround for ensuring that `react` and `react-dom` resolve correctly
+    // when using a locally-linked version of `react-notion-x`.
+    // @see https://github.com/vercel/next.js/issues/50391
+    const dirname = path.dirname(fileURLToPath(import.meta.url))
+    config.resolve.alias.react = path.resolve(dirname, 'node_modules/react')
+    config.resolve.alias['react-dom'] = path.resolve(
+      dirname,
+      'node_modules/react-dom'
+    )
+    return config
+  },
+  // See https://react-tweet.vercel.app/next#troubleshooting
+  transpilePackages: ['react-tweet']
 })

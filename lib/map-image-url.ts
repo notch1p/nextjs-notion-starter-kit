@@ -1,4 +1,4 @@
-import { Block } from 'notion-types'
+import { type Block } from 'notion-types'
 
 // import { defaultMapImageUrl } from 'react-notion-x'
 import { defaultPageCover, defaultPageIcon } from './config'
@@ -32,7 +32,7 @@ const defaultMapImageUrl = (url, block) => {
         return url
       }
     }
-  } catch (e) {
+  } catch {
     /* empty */
   }
   if (url.startsWith('/images')) {

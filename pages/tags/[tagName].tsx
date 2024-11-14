@@ -1,10 +1,9 @@
-import React from 'react'
-
 import { domain, isDev, rootNotionPageId } from 'lib/config'
 import { resolveNotionPage } from 'lib/resolve-notion-page'
 import omit from 'lodash.omit'
-import { ExtendedRecordMap } from 'notion-types'
+import { type ExtendedRecordMap } from 'notion-types'
 import { normalizeTitle } from 'notion-utils'
+import React from 'react'
 
 import { NotionPage } from '@/components/NotionPage'
 
@@ -68,6 +67,7 @@ export const getStaticProps = async (context) => {
 
                   const values = value.split(',')
                   if (
+                    // eslint-disable-next-line unicorn/prefer-array-some
                     !values.find(
                       (value: string) => normalizeTitle(value) === filteredValue
                     )

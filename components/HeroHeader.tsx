@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-
 import raf from 'raf'
 import random from 'random'
+import React, { Component } from 'react'
 import FluidAnimation from 'react-fluid-animation'
 
 const exp = random.exponential()
