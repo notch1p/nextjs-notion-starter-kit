@@ -1,7 +1,8 @@
 import raf from 'raf'
 import random from 'random'
 import React, { Component } from 'react'
-import FluidAnimation from 'react-fluid-animation'
+
+import { ReactFluidAnimation } from './fluid-animation'
 
 const exp = random.exponential()
 const numSplatsPerEpoch = 1
@@ -12,19 +13,19 @@ export class HeroHeader extends Component<{
   className?: string
 }> {
   _time: number = Date.now()
-  _direction: number
+  _direction: number = 1
   _tickRaf: any
   _timeout: any
   _animation: any
 
-  componentDidMount() {
+  override componentDidMount() {
     this._time = Date.now()
     this._direction = 1
     this._reset()
     this._tick()
   }
 
-  componentWillUnmount() {
+  override componentWillUnmount() {
     if (this._tickRaf) {
       raf.cancel(this._tickRaf)
       this._tickRaf = null
@@ -36,16 +37,16 @@ export class HeroHeader extends Component<{
     }
   }
 
-  render() {
+  override render() {
     return (
-      <FluidAnimation
+      <ReactFluidAnimation
         className={this.props.className}
         animationRef={this._animationRef}
       />
     )
   }
 
-  _animationRef = (ref) => {
+  _animationRef = (ref: any) => {
     this._animation = ref
     this._reset()
   }
@@ -90,7 +91,6 @@ export class HeroHeader extends Component<{
         const h0 = h / 3.0
         const h1 = (h * 2.0) / 3.0
 
-        // eslint-disable-next-line no-constant-condition
         while (true) {
           const x = random.float(w)
           const y = random.float(h)

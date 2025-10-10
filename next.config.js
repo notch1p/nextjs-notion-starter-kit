@@ -1,8 +1,10 @@
-import bundleAnalyzer from '@next/bundle-analyzer'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import bundleAnalyzer from '@next/bundle-analyzer'
+
 const withBundleAnalyzer = bundleAnalyzer({
+  // eslint-disable-next-line no-process-env
   enabled: process.env.ANALYZE === 'true'
 })
 
@@ -28,7 +30,7 @@ export default withBundleAnalyzer({
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
     // unoptimized: true
   },
-  webpack: (config, _context) => {
+  webpack: (config) => {
     // Workaround for ensuring that `react` and `react-dom` resolve correctly
     // when using a locally-linked version of `react-notion-x`.
     // @see https://github.com/vercel/next.js/issues/50391

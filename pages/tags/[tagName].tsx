@@ -1,3 +1,5 @@
+// TODO: [tagName].tsx
+
 import { domain, isDev, rootNotionPageId } from 'lib/config'
 import { resolveNotionPage } from 'lib/resolve-notion-page'
 import omit from 'lodash.omit'
@@ -9,12 +11,12 @@ import { NotionPage } from '@/components/NotionPage'
 
 const tagsPropertyNameLowerCase = 'tags'
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: any) => {
   const rawTagName = (context.params.tagName as string) || ''
 
   try {
     const props = await resolveNotionPage(domain, rootNotionPageId)
-    let propertyToFilterName: string = null
+    let propertyToFilterName: string | null = null
 
     if ((props as any).recordMap) {
       const recordMap = (props as any).recordMap as ExtendedRecordMap
@@ -44,9 +46,10 @@ export const getStaticProps = async (context) => {
             )
             const propertyToFilterId = propertyToFilter?.[0]
             const filteredValue = normalizeTitle(rawTagName)
-            propertyToFilterName = propertyToFilter?.[1]?.options.find(
-              (option) => normalizeTitle(option.value) === filteredValue
-            )?.value
+            propertyToFilterName =
+              propertyToFilter?.[1]?.options?.find(
+                (option) => normalizeTitle(option.value) === filteredValue
+              )?.value ?? null
 
             if (propertyToFilterId && filteredValue) {
               const query =
@@ -115,8 +118,8 @@ export async function getStaticPaths() {
             property[1]?.name?.toLowerCase() === tagsPropertyNameLowerCase
         )?.[1]
 
-        const paths = propertyToFilterSchema.options
-          .map((option) => normalizeTitle(option.value))
+        const paths = propertyToFilterSchema?.options
+          ?.map((option) => normalizeTitle(option.value))
           .filter(Boolean)
           .map((slug) => `/tags/${slug}`)
 
@@ -134,6 +137,6 @@ export async function getStaticPaths() {
   }
 }
 
-export default function NotionTagsPage(props) {
+export default function NotionTagsPage(props: any) {
   return <NotionPage {...props} />
 }

@@ -44,36 +44,62 @@ const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then(async (m) => {
     // add / remove any prism syntaxes here
     await Promise.allSettled([
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-markup-templating.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-markup.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-bash.js'),
+      // @ts-expect-error Ignore prisma types
+      import('prismjs/components/prism-ebnf.js'),
+      // @ts-expect-error Ignore prisma types
+      import('prismjs/components/prism-bnf.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-c.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-elixir.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-haskell.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-cpp.js'),
       // import('prismjs/components/prism-csharp.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-latex.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-java.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-coq.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-j.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-js-templates.js'),
       // import('prismjs/components/prism-diff.js'),
       // import('prismjs/components/prism-git.js'),
       // import('prismjs/components/prism-go.js'),
       // import('prismjs/components/prism-handlebars.js'),
       // import('prismjs/components/prism-less.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-lisp.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-racket.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-makefile.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-markdown.js'),
       // import('prismjs/components/prism-objectivec.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-ocaml.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-python.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-rust.js'),
       // import('prismjs/components/prism-sass.js'),
       // import('prismjs/components/prism-scss.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-sql.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-swift.js'),
+      // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-yaml.js')
     ])
     return m.Code
@@ -117,7 +143,7 @@ function Tweet({ id }: { id: string }) {
 }
 
 const propertyLastEditedTimeValue = (
-  { block, pageHeader },
+  { block, pageHeader }: any,
   defaultFn: () => React.ReactNode
 ) => {
   if (pageHeader && block?.last_edited_time) {
@@ -136,7 +162,7 @@ const propertyLastEditedTimeValue = (
 }
 
 const propertyDateValue = (
-  { data, schema, pageHeader },
+  { data, schema, pageHeader }: any,
   defaultFn: () => React.ReactNode
 ) => {
   if (pageHeader && schema?.name?.toLowerCase() === 'published') {
@@ -152,7 +178,7 @@ const propertyDateValue = (
 }
 
 const propertyTextValue = (
-  { schema, pageHeader },
+  { schema, pageHeader }: any,
   defaultFn: () => React.ReactNode
 ) => {
   if (pageHeader && schema?.name?.toLowerCase() === 'author') {
@@ -163,7 +189,7 @@ const propertyTextValue = (
 }
 
 const propertySelectValue = (
-  { schema, value, key, pageHeader },
+  { schema, value, key, pageHeader }: any,
   defaultFn: () => React.ReactNode
 ) => {
   value = normalizeTitle(value)
@@ -171,9 +197,9 @@ const propertySelectValue = (
   if (pageHeader && schema.type === 'multi_select' && value) {
     return (
       <Link href={`/tags/${value}`} key={key}>
-        <a>{defaultFn()}</a>
+        {defaultFn()}
       </Link>
-    )
+    );
   }
 
   return defaultFn()
@@ -224,11 +250,11 @@ export function NotionPage({
     if (lite) params.lite = lite
 
     const searchParams = new URLSearchParams(params)
-    return mapPageUrl(site, recordMap, searchParams)
+    return site ? mapPageUrl(site, recordMap!, searchParams) : undefined
   }, [site, recordMap, lite])
 
   const keys = Object.keys(recordMap?.block || {})
-  const block = recordMap?.block?.[keys[0]]?.value
+  const block = recordMap?.block?.[keys[0]!]?.value
 
   // const isRootPage =
   //   parsePageId(block?.id) === parsePageId(site?.rootNotionPageId)
@@ -243,7 +269,11 @@ export function NotionPage({
 
   const pageAside = React.useMemo(
     () => (
-      <PageAside block={block} recordMap={recordMap} isBlogPost={isBlogPost} />
+      <PageAside
+        block={block!}
+        recordMap={recordMap!}
+        isBlogPost={isBlogPost}
+      />
     ),
     [block, recordMap, isBlogPost]
   )
@@ -288,8 +318,9 @@ export function NotionPage({
     g.block = block
   }
 
-  const canonicalPageUrl =
-    !config.isDev && getCanonicalPageUrl(site, recordMap)(pageId)
+  const canonicalPageUrl = config.isDev
+    ? undefined
+    : getCanonicalPageUrl(site, recordMap)(pageId)
 
   const socialImage = mapImageUrl(
     getPageProperty<string>('Social Image', block, recordMap) ||
@@ -311,6 +342,7 @@ export function NotionPage({
         description={socialDescription}
         image={socialImage}
         url={canonicalPageUrl}
+        isBlogPost={isBlogPost}
       />
 
       {isLiteMode && <BodyClassName className='notion-lite' />}
@@ -335,14 +367,14 @@ export function NotionPage({
         defaultPageIcon={config.defaultPageIcon}
         defaultPageCover={config.defaultPageCover}
         defaultPageCoverPosition={config.defaultPageCoverPosition}
-        linkTableTitleProperties={false}
         mapPageUrl={siteMapPageUrl}
         mapImageUrl={mapImageUrl}
-        searchNotion={config.isSearchEnabled ? searchNotion : null}
+        searchNotion={config.isSearchEnabled ? searchNotion : undefined}
         pageAside={pageAside}
         footer={footer}
         pageTitle={tagsPage && propertyToFilterName ? title : undefined}
         pageCover={pageCover}
+        linkTableTitleProperties={false}
       />
     </>
   )

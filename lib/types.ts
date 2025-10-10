@@ -33,7 +33,7 @@ export interface Site {
   domain: string
 
   rootNotionPageId: string
-  rootNotionSpaceId: string
+  rootNotionSpaceId: string | null
 
   // settings
   html?: string
@@ -71,9 +71,9 @@ export interface PageUrlOverridesInverseMap {
 export interface NotionPageInfo {
   pageId: string
   title: string
-  image: string
-  imageObjectPosition: string
-  author: string
-  authorImage: string
-  detail: string
+  image?: string
+  imageObjectPosition?: string
+  author?: string
+  authorImage?: string
+  detail?: string
 }

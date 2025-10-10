@@ -3,7 +3,7 @@ import { type Block } from 'notion-types'
 // import { defaultMapImageUrl } from 'react-notion-x'
 import { defaultPageCover, defaultPageIcon } from './config'
 
-const defaultMapImageUrl = (url, block) => {
+const defaultMapImageUrl = (url: any, block: any) => {
   if (!url) {
     return null
   }
@@ -53,7 +53,7 @@ const defaultMapImageUrl = (url, block) => {
   return url
 }
 
-export const mapImageUrl = (url: string, block: Block) => {
+export const mapImageUrl = (url: string | undefined, block: Block) => {
   if (url === defaultPageCover || url === defaultPageIcon) {
     return url
   }
