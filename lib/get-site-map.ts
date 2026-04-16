@@ -1,4 +1,9 @@
-import { getAllPagesInSpace, getPageProperty, uuidToId } from 'notion-utils'
+import {
+  getAllPagesInSpace,
+  getBlockValue,
+  getPageProperty,
+  uuidToId
+} from 'notion-utils'
 import pMemoize from 'p-memoize'
 
 import type * as types from './types'
@@ -28,6 +33,7 @@ const getAllPages = pMemoize(getAllPagesImpl, {
 const getPage = async (pageId: string, opts?: any) => {
   console.log('\nnotion getPage', uuidToId(pageId))
   return notion.getPage(pageId, {
+    throwOnCollectionErrors: true,
     kyOptions: {
       timeout: 30_000
     },
@@ -57,7 +63,8 @@ async function getAllPagesImpl(
       if (!recordMap) {
         throw new Error(`Error loading page "${pageId}"`)
       }
-      const block = recordMap.block[pageId]?.value
+      const block = getBlockValue(recordMap.block[pageId])
+      console.log(`page property public:${getPageProperty<boolean>('Public', block!, recordMap)}`)
       if (
         !(getPageProperty<boolean | null>('Public', block!, recordMap) ?? true)
       ) {
@@ -70,7 +77,7 @@ async function getAllPagesImpl(
       if (map[canonicalPageId]) {
         // you can have multiple pages in different collections that have the same id
         // TODO: we may want to error if neither entry is a collection page
-        console.warn('error duplicate canonical page id', {
+        console.warn('warning duplicate canonical page id', {
           canonicalPageId,
           pageId,
           existingPageId: map[canonicalPageId]

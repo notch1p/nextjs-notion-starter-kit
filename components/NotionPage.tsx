@@ -7,8 +7,9 @@ import { type PageBlock } from 'notion-types'
 import {
   formatDate,
   getBlockTitle,
+  getBlockValue,
   getPageProperty,
-  normalizeTitle,
+//  normalizeTitle,
   parsePageId
 } from 'notion-utils'
 import * as React from 'react'
@@ -41,7 +42,7 @@ import styles from './styles.module.css'
 // -----------------------------------------------------------------------------
 
 const Code = dynamic(() =>
-  import('react-notion-x/build/third-party/code').then(async (m) => {
+  import('react-notion-x/third-party/code').then(async (m) => {
     // add / remove any prism syntaxes here
     await Promise.allSettled([
       // @ts-expect-error Ignore prisma types
@@ -107,22 +108,20 @@ const Code = dynamic(() =>
 )
 
 const Collection = dynamic(() =>
-  import('react-notion-x/build/third-party/collection').then(
-    (m) => m.Collection
-  )
+  import('react-notion-x/third-party/collection').then((m) => m.Collection)
 )
 const Equation = dynamic(() =>
-  import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
+  import('react-notion-x/third-party/equation').then((m) => m.Equation)
 )
 const Pdf = dynamic(
-  () => import('react-notion-x/build/third-party/pdf').then((m) => m.Pdf),
+  () => import('react-notion-x/third-party/pdf').then((m) => m.Pdf),
   {
     ssr: false
   }
 )
 const Modal = dynamic(
   () =>
-    import('react-notion-x/build/third-party/modal').then((m) => {
+    import('react-notion-x/third-party/modal').then((m) => {
       m.Modal.setAppElement('.notion-viewport')
       return m.Modal
     }),
@@ -188,27 +187,43 @@ const propertyTextValue = (
   return defaultFn()
 }
 
-const propertySelectValue = (
-  { schema, value, key, pageHeader }: any,
-  defaultFn: () => React.ReactNode
-) => {
-  value = normalizeTitle(value)
-
-  if (pageHeader && schema.type === 'multi_select' && value) {
-    return (
-      <Link href={`/tags/${value}`} key={key}>
-        {defaultFn()}
-      </Link>
-    );
-  }
-
-  return defaultFn()
-}
+//const propertySelectValue = (
+//  { schema, value, key, pageHeader }: any,
+//  defaultFn: () => React.ReactNode
+//) => {
+//  value = normalizeTitle(value)
+//
+//  if (pageHeader && schema.type === 'multi_select' && value) {
+//    return (
+//      <Link href={`/tags/${value}`} key={key}>
+//        {defaultFn()}
+//      </Link>
+//    )
+//  }
+//
+//  return defaultFn()
+//}
 
 const HeroHeader = dynamic<{ className?: string }>(
   () => import('./HeroHeader').then((m) => m.HeroHeader),
   { ssr: false }
 )
+
+const notionRendererComponents: Partial<NotionComponents> = {
+  nextLegacyImage: Image,
+  nextLink: Link,
+  Code,
+  Collection,
+  Equation,
+  Pdf,
+  Modal,
+  Tweet,
+  Header: NotionPageHeader,
+  propertyLastEditedTimeValue,
+  propertyTextValue,
+  propertyDateValue,
+//  propertySelectValue
+}
 
 export function NotionPage({
   site,
@@ -220,26 +235,6 @@ export function NotionPage({
 }: types.PageProps) {
   const router = useRouter()
   const lite = useSearchParam('lite')
-
-  const components = React.useMemo<Partial<NotionComponents>>(
-    () => ({
-      nextLegacyImage: Image,
-      nextLink: Link,
-      Code,
-      Collection,
-      Equation,
-      Pdf,
-      Modal,
-      Tweet,
-      Header: NotionPageHeader,
-      propertyLastEditedTimeValue,
-      propertyTextValue,
-      propertyDateValue,
-      propertySelectValue
-    }),
-    []
-  )
-
   // lite mode is for oembed
   const isLiteMode = lite === 'true'
 
@@ -254,7 +249,7 @@ export function NotionPage({
   }, [site, recordMap, lite])
 
   const keys = Object.keys(recordMap?.block || {})
-  const block = recordMap?.block?.[keys[0]!]?.value
+  const block = getBlockValue(recordMap?.block?.[keys[0]!])
 
   // const isRootPage =
   //   parsePageId(block?.id) === parsePageId(site?.rootNotionPageId)
@@ -278,7 +273,6 @@ export function NotionPage({
     [block, recordMap, isBlogPost]
   )
 
-  const footer = React.useMemo(() => <Footer />, [])
 
   const pageCover = React.useMemo(() => {
     if (isBioPage) {
@@ -294,7 +288,7 @@ export function NotionPage({
     return <Loading />
   }
 
-  if (error || !site || !block) {
+  if (error || !site || !block || !recordMap) {
     return <Page404 site={site} pageId={pageId} error={error} />
   }
 
@@ -355,7 +349,7 @@ export function NotionPage({
           tagsPage && 'tags-page'
         )}
         darkMode={isDarkMode}
-        components={components}
+        components={notionRendererComponents}
         recordMap={recordMap}
         rootPageId={site.rootNotionPageId}
         rootDomain={site.domain}
@@ -371,7 +365,7 @@ export function NotionPage({
         mapImageUrl={mapImageUrl}
         searchNotion={config.isSearchEnabled ? searchNotion : undefined}
         pageAside={pageAside}
-        footer={footer}
+        footer={<Footer />}
         pageTitle={tagsPage && propertyToFilterName ? title : undefined}
         pageCover={pageCover}
         linkTableTitleProperties={false}
