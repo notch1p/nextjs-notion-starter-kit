@@ -9,7 +9,7 @@ import {
   getBlockTitle,
   getBlockValue,
   getPageProperty,
-//  normalizeTitle,
+  //  normalizeTitle,
   parsePageId
 } from 'notion-utils'
 import * as React from 'react'
@@ -221,8 +221,8 @@ const notionRendererComponents: Partial<NotionComponents> = {
   Header: NotionPageHeader,
   propertyLastEditedTimeValue,
   propertyTextValue,
-  propertyDateValue,
-//  propertySelectValue
+  propertyDateValue
+  //  propertySelectValue
 }
 
 export function NotionPage({
@@ -272,7 +272,6 @@ export function NotionPage({
     ),
     [block, recordMap, isBlogPost]
   )
-
 
   const pageCover = React.useMemo(() => {
     if (isBioPage) {
@@ -361,6 +360,7 @@ export function NotionPage({
         defaultPageIcon={config.defaultPageIcon}
         defaultPageCover={config.defaultPageCover}
         defaultPageCoverPosition={config.defaultPageCoverPosition}
+        linkTableTitleProperties={false}
         mapPageUrl={siteMapPageUrl}
         mapImageUrl={mapImageUrl}
         searchNotion={config.isSearchEnabled ? searchNotion : undefined}
@@ -368,7 +368,6 @@ export function NotionPage({
         footer={<Footer />}
         pageTitle={tagsPage && propertyToFilterName ? title : undefined}
         pageCover={pageCover}
-        linkTableTitleProperties={false}
       />
     </>
   )

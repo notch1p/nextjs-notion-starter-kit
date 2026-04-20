@@ -15,6 +15,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p 24852",
+    "prepare": "simple-git-hooks",
     "deploy": "vercel deploy",
     "deps:upgrade": "[ -z $GITHUB_ACTIONS ] && pnpm up -L notion-client notion-types notion-utils react-notion-x || echo 'Skipping deps:update on CI'",
     "deps:link": "[ -z $GITHUB_ACTIONS ] && run-s deps:link:* || echo 'Skipping deps:update on CI'",
@@ -69,6 +70,7 @@
     "npm-run-all2": "^8.0.4",
     "omit": "link:@types/lodash/omit",
     "prettier": "^3.8.1",
+    "simple-git-hooks": "^2.13.1",
     "typescript": "^5.9.3"
   },
   "overrides": {
@@ -78,7 +80,7 @@
   },
   "prettier": "@fisch0920/config/prettier",
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
+    "pre-commit": "sh scripts/update-google-fonts.sh && pnpx lint-staged"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

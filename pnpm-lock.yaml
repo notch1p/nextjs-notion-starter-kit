@@ -126,6 +126,9 @@ importers:
       prettier:
         specifier: ^3.8.1
         version: 3.8.3
+      simple-git-hooks:
+        specifier: ^2.13.1
+        version: 2.13.1
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -2389,6 +2392,10 @@ packages:
 
   simple-get@4.0.1:
     resolution: {integrity: sha512-brv7p5WgH0jmQJr1ZDDfKDOSeWWg+OVypG99A/5vYGPqJ6pxiaHLy8nxtFjBA7oMa01ebA9gfh1uMCFqOuXxvA==}
+
+  simple-git-hooks@2.13.1:
+    resolution: {integrity: sha512-WszCLXwT4h2k1ufIXAgsbiTOazqqevFCIncOuUBZJ91DdvWcC5+OFkluWRQPrcuSYd8fjq+o2y1QfWqYMoAToQ==}
+    hasBin: true
 
   simple-swizzle@0.2.4:
     resolution: {integrity: sha512-nAu1WFPQSMNr2Zn9PGSZK9AGn4t/y97lEm+MXTtUDwfP0ksAIX4nO+6ruD9Jwut4C49SB1Ws+fbXsm/yScWOHw==}
@@ -5169,6 +5176,8 @@ snapshots:
       once: 1.4.0
       simple-concat: 1.0.1
     optional: true
+
+  simple-git-hooks@2.13.1: {}
 
   simple-swizzle@0.2.4:
     dependencies:
